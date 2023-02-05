@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.reactUI
+      image: ubercore/slackfrontend:latest
+      container_name: slackfrontend 
     ports:
       - "3000:3000"    
     depends_on:
@@ -11,6 +13,8 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile.node
+      image: ubercore/nodebackend:latest
+      container_name: nodebackend 
     ports: 
       - "9000:9000"    #external:internal 
     depends_on:
